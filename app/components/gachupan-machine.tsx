@@ -66,9 +66,12 @@ export default function GachaponMachine({ onDispense }: GachaponProps) {
                 </div>
 
                 {/* CAPSULES (Emojis inside) */}
-                <div className="absolute bottom-0 w-full flex justify-center flex-wrap gap-1 px-4 mb-2">
+                <div className="absolute bottom-9 w-full flex justify-center flex-wrap gap-1 px-4 mb-2">
                     <Capsule color="bg-rose-400" icon="❤️" rotate="-rotate-12" />
                     <Capsule color="bg-blue-400" icon="😴" rotate="rotate-6" />
+                    <Capsule color="bg-neutral-400" icon="😈" rotate="rotate-6" />
+                </div>
+                <div className="absolute bottom-0 w-full flex justify-center flex-wrap gap-1 px-4 mb-2">
                     <Capsule color="bg-yellow-400" icon="😎" rotate="-rotate-45" />
                     <Capsule color="bg-teal-400" icon="🥺" rotate="rotate-12" />
                     <Capsule color="bg-purple-400" icon="🥰" rotate="-rotate-6" />

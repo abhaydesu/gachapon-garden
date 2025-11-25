@@ -24,21 +24,29 @@ export default function JigsawGame({ imageSrc, onReset }: JigsawGameProps) {
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center gap-6 p-4">
-      
+    <div className="w-full max-w-4xl mx-auto flex flex-col items-center gap-6 p-4">
+        
       {/* 1. Confetti */}
-      {isSolved && <Confetti recycle={false} numberOfPieces={500} gravity={0.2} />}
+      {isSolved && <div className="absolute top-0 h-full w-full ">
+      <Confetti  recycle={false} numberOfPieces={500} gravity={0.2} />
+      </div>}
 
       {/* 2. Header */}
       <div className="text-center space-y-2">
-        <h2 className="font-display text-3xl text-matcha-500">
+         <div className="relative border-10 border-red-300 py-4 px-8 bg-white">
+                  <div className="absolute top-0 left-0 z-40 h-2 w-2 bg-red-300"></div>
+                  <div className="absolute top-0 right-0 z-40 h-2 w-2 bg-red-300"></div>
+                  <div className="absolute bottom-0 left-0 z-40 h-2 w-2 bg-red-300"></div>
+                  <div className="absolute bottom-0 right-0 z-40 h-2 w-2 bg-red-300"></div>
+        <h2 className="font-display text-3xl text-red-300">
           {isSolved ? "Memory Restored!" : "Piece it together"}
         </h2>
         {!isSolved && (
-          <p className="text-ink/60 font-sans text-sm">
+          <p className="text-red-300 font-sans text-sm">
             Drag the pieces to complete the photo.
           </p>
         )}
+        </div>
       </div>
 
       {/* 3. The Puzzle Area */}
@@ -58,13 +66,14 @@ export default function JigsawGame({ imageSrc, onReset }: JigsawGameProps) {
               onSolved={handleSolved}
             />
         </div>
+        
 
         {/* Success Overlay */}
         {isSolved && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="absolute inset-0 bg-black/40 backdrop-blur-[2px] rounded-lg z-10 flex flex-col items-center justify-center gap-4"
+            className="mt-4 backdrop-blur-[2px] rounded-lg z-10 flex flex-col items-center justify-center gap-4"
           >
             <div className="bg-red-300 p-2 relative">
                 <div className="absolute h-2 w-2 bg-red-300 top-2 left-2"></div>
