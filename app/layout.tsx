@@ -1,19 +1,5 @@
-// src/app/layout.tsx
 import type { Metadata } from "next";
-import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
-
-const fredoka = Fredoka({ 
-  subsets: ["latin"],
-  variable: "--font-fredoka", // Matches CSS var
-  display: "swap",
-});
-
-const nunito = Nunito({ 
-  subsets: ["latin"],
-  variable: "--font-nunito", // Matches CSS var
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Day 11",
